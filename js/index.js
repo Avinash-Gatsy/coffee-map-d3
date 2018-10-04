@@ -36,7 +36,7 @@ var arc = d3.svg.arc()
   .outerRadius(function (d) { return Math.max(0, y(d.y + d.dy)); });
 
 // load the data
-d3.json("./old.js", function (error, json) {
+d3.json("./data.js", function (error, json) {
   var nodes = partition.nodes({ children: json });
 
   var path = vis.selectAll("path")
@@ -49,7 +49,7 @@ d3.json("./old.js", function (error, json) {
     .on("click", click)
     .style("stroke", "#000")
     .style("stroke-width", 1)
-    .style("opacity", 0.6)
+    .style("opacity", 0.65)
     .on("mouseover", mouseover);
 
 
@@ -94,7 +94,7 @@ d3.json("./old.js", function (error, json) {
     d3.selectAll("path")
       .style("stroke", "#000")
       .style("stroke-width", 1)
-      .style("opacity", 0.6);
+      .style("opacity", 0.65);
   }
 
   // Then highlight only those that are an ancestor of the current segment.
@@ -160,19 +160,13 @@ function isParentOf(p, c) {
 }
 
 function colour(d) {
-  var colorArr = ["#004988", "#006666", "#80ff80", "#ffff4d", "#ff33ff", "#ff944d", "#33adff", "#6699ff", "#1affa3"];
-  return colorArr[Math.floor(Math.random() * colorArr.length)];
-  // if (d.children) {
-  //   // There is a maximum of two children!
-  //   var colours = d.children.map(colour),
-  //     a = d3.hsl(colorArr[Math.floor(Math.random() * colorArr.length)]),
-  //     b = d3.hsl(colorArr[Math.floor(Math.random() * colorArr.length)]);
-  //   // L*a*b* might be better here...
-  //   //console.log("values:- "+a.h+"," +b.h+","+a.s+","+a.l);
-  //   return "#004988";//d3.hsl((a.h + b.h) / 2, a.s * 1.2, a.l / 1.2);
-  // }
-  // console.log("d colour:- " + d.colour);
-  // return d.colour || "#004988"; // #fff for white gradient
+  console.log(d);
+  //var colorArr = ["#004988", "#006666", "#80ff80", "#ffff4d", "#ff33ff", "#ff944d", "#33adff", "#6699ff", "#1affa3"];
+  if (d.color) {
+    return d.color;
+  }
+  //return colorArr[Math.floor(Math.random() * colorArr.length)];
+  return "rgba(191, 219, 78, 0.85)";
 }
 
 // Interpolate the scales!
