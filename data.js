@@ -25,7 +25,7 @@
             "name": "Star_Lords",
             "color": "rgba(255, 148, 77, 0.4)"
           },{
-            "name": "Quality Kings",
+            "name": "Quality_Kings",
             "color": "rgba(255, 148, 77, 0.4)"
           }
         ]
@@ -133,7 +133,7 @@
         "color": "rgba(233, 111, 111, 0.65)",
         "children": [
           {
-            "name": "Quality Kings",
+            "name": "Quality_Kings",
             "color": "rgba(233, 111, 111, 0.4)"
           },
           {
@@ -159,11 +159,19 @@
         "color": "rgba(189, 123, 240, 0.65)",
         "children": [
           {
-            "name": "Nagas",
+            "name": "Transformers",
             "color": "rgba(189, 123, 240, 0.4)"
           },
           {
             "name": "Himavat",
+            "color": "rgba(189, 123, 240, 0.4)"
+          },
+          {
+            "name": "Mowglis",
+            "color": "rgba(189, 123, 240, 0.4)"
+          },
+          {
+            "name": "Samudra",
             "color": "rgba(189, 123, 240, 0.4)"
           }
         ]
